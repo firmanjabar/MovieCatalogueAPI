@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Katalog Film</string>
+    <string name="tab_text_1">Film</string>
+    <string name="tab_text_2">Series</string>
+    <string name="movie_title">Judul Film</string>
+	<string name="setting">Pengaturan</string>
+    <string name="backdrop">Gambar Backdrop</string>
+    <string name="poster">Gambar Poster</string>
+    <string name="year">Rilis</string>
+	<string name="overview">Sinopsis</string>
+    <string name="description">Lorem ipsum lorem lorem ipsum dolo salam hia kurikutsa lorem lorem ipsum dolo salam hia kurikutsa lorem lorem ipsum dolo salam hia kurikutsa lorem lorem ipsum dolo salam hia kurikutsa</string>
+	<string name="load">Muat Ulang</string>
+	<string name="genre">Genre</string>
+	<string name="connection">Tidak bisa memuat data, coba cek koneksi internet anda!</string>
+	<string name="created_by">Dibuat Oleh</string>
+	<string name="txtCreated">-</string>
+	<string name="production_companies">Rumah Produksi</string>
+	<string name="company_name">-</string>
+	<string name="status">Status</string>
+	<string name="returning_status">-</string>
+	<string name="runtime">Durasi</string>
+	<string name="_50">-</string>
+	<string name="minutes">menit</string>
+	<string name="total_episodes">Total Episode</string>
+	<string name="episode">episode</string>
+	<string name="total_seasons">Total Season</string>
+	<string name="season">season</string>
+</resources>

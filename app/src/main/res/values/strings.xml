@@ -1,0 +1,28 @@
+<resources>
+	<string name="app_name">Movie Catalogue</string>
+	<string name="tab_text_1">Movies</string>
+	<string name="tab_text_2">TV Shows</string>
+	<string name="movie_title">Movie Title</string>
+	<string name="setting">Setting</string>
+	<string name="backdrop">Image Backdrop</string>
+	<string name="poster">Image poster</string>
+	<string name="year">Release</string>
+	<string name="overview">Overview</string>
+	<string name="description">Lorem ipsum</string>
+	<string name="load">Load Data</string>
+	<string name="genre">Genre</string>
+	<string name="connection">Couldn\'t refresh data, please check your connection!</string>
+	<string name="created_by">Created By</string>
+	<string name="txtCreated">-</string>
+	<string name="production_companies">Production Companies</string>
+	<string name="company_name">-</string>
+	<string name="status">Status</string>
+	<string name="returning_status">-</string>
+	<string name="runtime">Runtime</string>
+	<string name="_50">-</string>
+	<string name="minutes">minutes</string>
+	<string name="total_episodes">Total Episodes</string>
+	<string name="episode">episode</string>
+	<string name="total_seasons">Total Seasons</string>
+	<string name="season">season</string>
+</resources>
