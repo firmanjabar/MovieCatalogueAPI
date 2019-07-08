@@ -46,6 +46,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
+
+
         MovieModel movies = getmData().get(i);
         myViewHolder.tvTitle.setText(movies.getTitle());
         myViewHolder.tvDate.setText(movies.getDate());

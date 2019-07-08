@@ -1,6 +1,5 @@
 package com.firmanjabar.submission3.fragment;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -12,20 +11,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.firmanjabar.submission3.R;
-import com.firmanjabar.submission3.adapter.MovieAdapter;
 import com.firmanjabar.submission3.adapter.TvAdapter;
-import com.firmanjabar.submission3.model.MovieModel;
 import com.firmanjabar.submission3.model.TvModel;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
-
 import cz.msebera.android.httpclient.Header;
 
 public class TvFragment extends Fragment {

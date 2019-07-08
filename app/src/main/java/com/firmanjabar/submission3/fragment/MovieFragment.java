@@ -1,6 +1,7 @@
 package com.firmanjabar.submission3.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,20 +12,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.firmanjabar.submission3.R;
 import com.firmanjabar.submission3.adapter.MovieAdapter;
 import com.firmanjabar.submission3.model.MovieModel;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
+import java.util.Objects;
 
 import cz.msebera.android.httpclient.Header;
-
 
 public class MovieFragment extends Fragment {
 
@@ -37,7 +35,6 @@ public class MovieFragment extends Fragment {
 
     public MovieFragment() {
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,7 +49,7 @@ public class MovieFragment extends Fragment {
         return v;
     }
 
-    private void getData () {
+    public void getData () {
         String url = "https://api.themoviedb.org/3/movie/popular?api_key=f6bcf9844871b7ddb1c34b9fa7ce750e&language=en-US";
 
         AsyncHttpClient client = new AsyncHttpClient();

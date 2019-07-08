@@ -1,48 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:orientation="vertical"
 	android:background="#121920"
-	tools:context=".TvDetaislActivity">
+	tools:context=".MovieDetailsActivity">
 
 	<ProgressBar
 		android:id="@+id/progress_bar_detail"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintHeight_percent=".5"
-		app:layout_constraintLeft_toLeftOf="parent"
-		app:layout_constraintRight_toRightOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:layout_constraintWidth_percent=".5" />
+		android:gravity="center_vertical"
+		android:layout_gravity="center"/>
 
 	<Button
 		android:id="@+id/load"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
 		android:text="@string/load"
-		android:visibility="invisible"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintHeight_percent=".5"
-		app:layout_constraintLeft_toLeftOf="parent"
-		app:layout_constraintRight_toRightOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:layout_constraintWidth_percent=".5" />
+		android:gravity="center_vertical"
+		android:layout_gravity="center"
+		android:visibility="invisible" />
 
 	<ScrollView
+		android:id="@+id/scrollView"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:id="@+id/scrollView"
-		android:orientation="vertical"
+		android:background="#121920"
 		android:visibility="invisible">
 
-		<RelativeLayout
+		<android.support.constraint.ConstraintLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:background="#121920"
 			android:orientation="vertical">
 
 			<ImageView
@@ -51,7 +43,13 @@
 				android:layout_height="170dp"
 				android:background="@drawable/ic_launcher_background"
 				android:contentDescription="@string/backdrop"
-				android:scaleType="centerCrop" />
+				android:scaleType="centerCrop"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.0"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintVertical_bias="0.0" />
 
 			<ImageView
 				android:id="@+id/detail_img_poster"
@@ -60,15 +58,17 @@
 				android:layout_below="@id/detail_img_bd"
 				android:layout_alignParentStart="true"
 				android:layout_marginStart="16dp"
-				android:layout_marginTop="-24dp"
+				android:layout_marginTop="145dp"
 				android:layout_marginBottom="10dp"
 				android:background="@mipmap/ic_launcher"
 				android:contentDescription="@string/poster"
-				android:scaleType="fitXY" />
+				android:scaleType="fitXY"
+				app:layout_constraintStart_toStartOf="@+id/detail_img_bd"
+				app:layout_constraintTop_toTopOf="@+id/detail_img_bd" />
 
 			<TextView
 				android:id="@+id/detail_title"
-				android:layout_width="match_parent"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/detail_img_bd"
 				android:layout_marginStart="10dp"
@@ -81,6 +81,9 @@
 				android:textColor="@android:color/white"
 				android:textSize="24sp"
 				android:textStyle="bold"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/detail_img_poster"
+				app:layout_constraintTop_toBottomOf="@+id/detail_img_bd"
 				tools:text="@string/movie_title" />
 
 			<TextView
@@ -88,29 +91,32 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/detail_title"
-				android:layout_marginStart="10dp"
-				android:layout_marginTop="3dp"
-				android:layout_marginEnd="4dp"
+				android:layout_marginTop="4dp"
 				android:layout_toEndOf="@+id/detail_img_poster"
 				android:gravity="center_vertical"
 				android:text="@string/year"
 				android:textColor="@android:color/darker_gray"
-				android:textSize="15sp" />
+				android:textSize="15sp"
+				app:layout_constraintStart_toStartOf="@+id/detail_title"
+				app:layout_constraintTop_toBottomOf="@+id/detail_title" />
 
 			<TextView
 				android:id="@+id/detail_date"
-				android:layout_width="match_parent"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/detail_title"
-				android:layout_marginStart="0dp"
-				android:layout_marginTop="0dp"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="4dp"
 				android:layout_marginEnd="16dp"
 				android:layout_toEndOf="@+id/txtYear"
 				android:gravity="center_vertical"
-				android:padding="3dp"
+				android:padding="0dp"
 				android:textColor="@android:color/darker_gray"
 				android:textSize="15sp"
 				android:textStyle="bold"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/txtYear"
+				app:layout_constraintTop_toBottomOf="@+id/detail_title"
 				tools:text="@string/year" />
 
 			<TextView
@@ -119,28 +125,33 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/detail_img_poster"
 				android:layout_alignParentStart="true"
-				android:layout_marginStart="16dp"
+				android:layout_marginStart="0dp"
 				android:layout_marginTop="8dp"
-				android:layout_marginEnd="4dp"
+				android:layout_marginEnd="16dp"
 				android:gravity="center_vertical"
 				android:text="@string/genre"
 				android:textColor="@android:color/white"
-				android:textSize="15sp" />
+				android:textSize="15sp"
+				app:layout_constraintStart_toStartOf="@+id/detail_img_poster"
+				app:layout_constraintTop_toBottomOf="@+id/detail_img_poster" />
 
 			<TextView
 				android:id="@+id/detail_genre"
-				android:layout_width="match_parent"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/detail_img_poster"
-				android:layout_marginStart="0dp"
-				android:layout_marginTop="5dp"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="8dp"
 				android:layout_marginEnd="16dp"
 				android:layout_toEndOf="@+id/txtGenre"
 				android:gravity="center_vertical"
-				android:padding="3dp"
+				android:padding="0dp"
 				android:textColor="@android:color/darker_gray"
 				android:textSize="15sp"
 				android:textStyle="bold"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/txtGenre"
+				app:layout_constraintTop_toBottomOf="@+id/detail_img_poster"
 				tools:text="@string/genre" />
 
 			<RatingBar
@@ -149,43 +160,45 @@
 				android:layout_width="85dp"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/detail_date"
-				android:layout_marginStart="10dp"
-				android:layout_marginTop="0dp"
-				android:layout_marginEnd="16dp"
+				android:layout_marginTop="8dp"
 				android:layout_toEndOf="@+id/detail_img_poster"
 				android:padding="2dp"
-				android:progressTint="#fff999" />
+				android:progressTint="#fff999"
+				app:layout_constraintStart_toStartOf="@+id/txtYear"
+				app:layout_constraintTop_toBottomOf="@+id/detail_date" />
 
 			<TextView
 				android:id="@+id/txtOverview"
-				android:layout_width="wrap_content"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_below="@id/detail_genre"
 				android:layout_alignStart="@+id/txtGenre"
-				android:layout_marginStart="0dp"
 				android:layout_marginTop="8dp"
-				android:layout_marginEnd="16dp"
 				android:gravity="center_vertical"
 				android:paddingTop="2dp"
 				android:paddingBottom="2dp"
 				android:text="@string/overview"
 				android:textColor="@android:color/white"
 				android:textSize="20sp"
-				android:textStyle="bold" />
+				android:textStyle="bold"
+				app:layout_constraintStart_toStartOf="@+id/txtGenre"
+				app:layout_constraintTop_toBottomOf="@+id/detail_genre" />
 
 			<TextView
 				android:id="@+id/detail_description"
-				android:layout_width="match_parent"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/txtOverview"
 				android:layout_alignStart="@+id/txtOverview"
-				android:layout_marginStart="0dp"
 				android:layout_marginTop="4dp"
 				android:layout_marginEnd="16dp"
 				android:padding="2dp"
 				android:textColor="@android:color/darker_gray"
 				android:textSize="15sp"
 				android:textStyle="bold"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="@+id/txtOverview"
+				app:layout_constraintTop_toBottomOf="@+id/txtOverview"
 				tools:text="@string/description" />
 
 			<TextView
@@ -198,28 +211,34 @@
 				android:layout_marginTop="15dp"
 				android:text="@string/created_by"
 				android:textColor="@android:color/white"
-				android:textSize="12sp" />
+				android:textSize="12sp"
+				app:layout_constraintStart_toStartOf="@+id/detail_description"
+				app:layout_constraintTop_toBottomOf="@+id/detail_description" />
 
 			<TextView
 				android:id="@+id/created_by"
-				android:layout_width="wrap_content"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/detail_description"
 				android:layout_marginStart="8dp"
 				android:layout_marginTop="15dp"
+				android:layout_marginEnd="16dp"
 				android:layout_toEndOf="@+id/txtCreated"
 				android:text="@string/txtCreated"
 				android:textColor="@color/colorAccent"
 				android:textSize="12sp"
-				android:textStyle="bold" />
+				android:textStyle="bold"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/txtCreated"
+				app:layout_constraintTop_toBottomOf="@+id/detail_description" />
 
 			<TextView
 				android:id="@+id/txt_company"
-				android:layout_width="match_parent"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/created_by"
 				android:layout_marginStart="8dp"
-				android:layout_marginTop="8dp"
+				android:layout_marginTop="8sp"
 				android:layout_marginEnd="16dp"
 				android:layout_toEndOf="@+id/txtComp"
 				android:backgroundTintMode="screen"
@@ -230,7 +249,10 @@
 				android:text="@string/company_name"
 				android:textColor="@color/colorAccent"
 				android:textSize="12sp"
-				android:textStyle="bold" />
+				android:textStyle="bold"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/txtComp"
+				app:layout_constraintTop_toBottomOf="@+id/created_by" />
 
 			<TextView
 				android:id="@+id/txtComp"
@@ -238,11 +260,12 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/created_by"
 				android:layout_alignStart="@+id/txtCreated"
-				android:layout_marginStart="0dp"
-				android:layout_marginTop="8dp"
+				android:layout_marginTop="8sp"
 				android:text="@string/production_companies"
 				android:textColor="@android:color/white"
-				android:textSize="12sp" />
+				android:textSize="12sp"
+				app:layout_constraintStart_toStartOf="@+id/txtCreated"
+				app:layout_constraintTop_toBottomOf="@+id/created_by" />
 
 			<TextView
 				android:id="@+id/txtStatus"
@@ -250,24 +273,29 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/txt_company"
 				android:layout_alignStart="@+id/txtComp"
-				android:layout_marginStart="0dp"
 				android:layout_marginTop="8dp"
 				android:text="@string/status"
 				android:textColor="@android:color/white"
-				android:textSize="12sp" />
+				android:textSize="12sp"
+				app:layout_constraintStart_toStartOf="@+id/txtComp"
+				app:layout_constraintTop_toBottomOf="@id/txt_company" />
 
 			<TextView
 				android:id="@+id/txt_status"
-				android:layout_width="wrap_content"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/txt_company"
 				android:layout_marginStart="8dp"
 				android:layout_marginTop="8dp"
+				android:layout_marginEnd="16dp"
 				android:layout_toEndOf="@+id/txtStatus"
 				android:text="@string/returning_status"
 				android:textColor="@color/colorAccent"
 				android:textSize="12sp"
-				android:textStyle="bold" />
+				android:textStyle="bold"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/txtStatus"
+				app:layout_constraintTop_toBottomOf="@id/txt_company" />
 
 			<TextView
 				android:id="@+id/txtRuntime"
@@ -275,11 +303,12 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/txt_status"
 				android:layout_alignStart="@+id/txtStatus"
-				android:layout_marginStart="0dp"
 				android:layout_marginTop="8dp"
 				android:text="@string/runtime"
 				android:textColor="@android:color/white"
-				android:textSize="12sp" />
+				android:textSize="12sp"
+				app:layout_constraintStart_toStartOf="@+id/txtStatus"
+				app:layout_constraintTop_toBottomOf="@+id/txt_status" />
 
 			<TextView
 				android:id="@+id/txt_runtime"
@@ -292,9 +321,12 @@
 				android:text="@string/_50"
 				android:textColor="@color/colorAccent"
 				android:textSize="12sp"
-				android:textStyle="bold" />
+				android:textStyle="bold"
+				app:layout_constraintStart_toEndOf="@+id/txtRuntime"
+				app:layout_constraintTop_toBottomOf="@+id/txt_status" />
 
 			<TextView
+				android:id="@+id/textView"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/txt_status"
@@ -304,7 +336,9 @@
 				android:text="@string/minutes"
 				android:textColor="@color/colorAccent"
 				android:textSize="12sp"
-				android:textStyle="bold" />
+				android:textStyle="bold"
+				app:layout_constraintStart_toEndOf="@+id/txt_runtime"
+				app:layout_constraintTop_toBottomOf="@+id/txt_status" />
 
 			<TextView
 				android:id="@+id/txtTotalEps"
@@ -312,11 +346,12 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/txt_runtime"
 				android:layout_alignStart="@+id/txtStatus"
-				android:layout_marginStart="0dp"
 				android:layout_marginTop="8dp"
 				android:text="@string/total_episodes"
 				android:textColor="@android:color/white"
-				android:textSize="12sp" />
+				android:textSize="12sp"
+				app:layout_constraintStart_toStartOf="@+id/txtRuntime"
+				app:layout_constraintTop_toBottomOf="@+id/txt_runtime" />
 
 			<TextView
 				android:id="@+id/txt_total_eps"
@@ -329,9 +364,12 @@
 				android:text="@string/_50"
 				android:textColor="@color/colorAccent"
 				android:textSize="12sp"
-				android:textStyle="bold" />
+				android:textStyle="bold"
+				app:layout_constraintStart_toEndOf="@+id/txtTotalEps"
+				app:layout_constraintTop_toBottomOf="@+id/txt_runtime" />
 
 			<TextView
+				android:id="@+id/textView2"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/txt_runtime"
@@ -341,19 +379,24 @@
 				android:text="@string/episode"
 				android:textColor="@color/colorAccent"
 				android:textSize="12sp"
-				android:textStyle="bold" />
+				android:textStyle="bold"
+				app:layout_constraintStart_toEndOf="@+id/txt_total_eps"
+				app:layout_constraintTop_toBottomOf="@+id/txt_runtime" />
 
 			<TextView
+				android:id="@+id/textView4"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/txt_total_eps"
 				android:layout_alignStart="@+id/txtStatus"
-				android:layout_marginStart="0dp"
 				android:layout_marginTop="8dp"
-				android:layout_marginBottom="25dp"
+				android:layout_marginBottom="20dp"
 				android:text="@string/total_seasons"
 				android:textColor="@android:color/white"
-				android:textSize="12sp" />
+				android:textSize="12sp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintStart_toStartOf="@+id/txtTotalEps"
+				app:layout_constraintTop_toBottomOf="@+id/txt_total_eps" />
 
 			<TextView
 				android:id="@+id/txt_total_season"
@@ -366,9 +409,12 @@
 				android:text="@string/_50"
 				android:textColor="@color/colorAccent"
 				android:textSize="12sp"
-				android:textStyle="bold" />
+				android:textStyle="bold"
+				app:layout_constraintStart_toEndOf="@+id/textView4"
+				app:layout_constraintTop_toBottomOf="@+id/txt_total_eps" />
 
 			<TextView
+				android:id="@+id/textView3"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/txt_total_eps"
@@ -378,8 +424,10 @@
 				android:text="@string/season"
 				android:textColor="@color/colorAccent"
 				android:textSize="12sp"
-				android:textStyle="bold" />
-		</RelativeLayout>
-	</ScrollView>
+				android:textStyle="bold"
+				app:layout_constraintStart_toEndOf="@+id/txt_total_season"
+				app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-</android.support.constraint.ConstraintLayout>
+		</android.support.constraint.ConstraintLayout>
+	</ScrollView>
+</FrameLayout>
