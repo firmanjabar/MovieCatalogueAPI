@@ -12,10 +12,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.firmanjabar.submission3.MovieDetailsActivity;
 import com.firmanjabar.submission3.R;
 import com.firmanjabar.submission3.TvDetaislActivity;
-import com.firmanjabar.submission3.model.MovieModel;
 import com.firmanjabar.submission3.model.TvModel;
 
 import java.util.ArrayList;

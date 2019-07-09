@@ -326,7 +326,6 @@
 				app:layout_constraintTop_toBottomOf="@+id/txt_status" />
 
 			<TextView
-				android:id="@+id/textView"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/txt_status"
@@ -414,7 +413,6 @@
 				app:layout_constraintTop_toBottomOf="@+id/txt_total_eps" />
 
 			<TextView
-				android:id="@+id/textView3"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/txt_total_eps"
